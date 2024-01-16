@@ -1,0 +1,119 @@
+@use "../util/" as *;
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: rem(30);
+  @include breakpoint(meduim) {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  background: var(--card-bg);
+  color: var(--dark-text1);
+  text-align: center;
+  padding: rem(25);
+  border-radius: rem(5);
+  position: relative;
+  overflow: hidden;
+  width: rem(255);
+  transition: all 150ms ease-in-out;
+  &:hover{
+    cursor: pointer;
+    background: var(--card-hover);
+  }
+  &--facebook {
+    border-top: rem(5) solid var(--facebook);
+  }
+  &--twitter {
+    border-top: rem(5) solid var(--twitter);
+  }
+  &--instgram {
+    padding-top: calc(rem(25) + rem(5));
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: rem(5);
+      background: linear-gradient(
+        235deg,
+        var(--instgram-start),
+        var(--instgram-end)
+      );
+    }
+  }
+  &--youtube {
+    border-top: rem(5) solid var(--youtube);
+  }
+  &__platform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: rem(28);
+    height: rem(20);
+  }
+  &__subtitle {
+    font-size: rem(14);
+    font-weight: 700;
+  }
+  &__icon {
+    margin-right: rem(8);
+    &--facebook {
+    }
+    &--twitter {
+    }
+    &--instgram {
+    }
+    &--youtube {
+    }
+  }
+  &__username {
+    font-size: rem(12);
+    font-weight: 700;
+  }
+  &__followers {
+    margin-bottom: rem(25);
+  }
+  &__count {
+    color: var(--text-color);
+    line-height: 1;
+    margin-bottom: rem(4);
+    &--big {
+      font-size: rem(56);
+      font-weight: 700;
+    }
+    &--small {
+      font-size: rem(32);
+      font-weight: 700;
+    }
+  }
+  &__label {
+    font-size: rem(12);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--light-text1);
+    letter-spacing: rem(5);
+  }
+  &__change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(4);
+    font-size: rem(12);
+    font-weight: 700;
+    &--up {
+      color: var(--limegreen);
+    }
+    &--down {
+      color: var(--brightred);
+    }
+  }
+}

@@ -1,2 +1,2 @@
-"use strict";console.log("Hello");
+"use strict";var theme=document.getElementsByTagName("body")[0],radioButtons=document.querySelectorAll(".toggle__wrapper input");radioButtons.forEach((function(e){e.addEventListener("click",(function(e){document.getElementById("dark").checked?theme.classList="dark":theme.classList="light"}))}));
 //# sourceMappingURL=script.js.map
